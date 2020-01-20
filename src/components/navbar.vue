@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <img class="logo" src="@/assets/ico.svg" />
     <h1>Instacopy</h1>
     <b-form-input
       class="searche"
@@ -12,11 +13,19 @@
 <script>
 export default {
   name: "navbar",
-  components: {}
+  components: {},
+  data() {
+    return {
+      text: ""
+    };
+  }
 };
 </script>
 
 <style scoped>
+.logo {
+  height: 5vh;
+}
 @font-face {
   font-family: Cookie;
   src: url("../assets/Cookie-Regular.ttf");
@@ -24,6 +33,7 @@ export default {
 .searche {
   width: 5vw;
   height: 4vh;
+  margin-top: 1vh;
 }
 .container {
   border-bottom: 1px solid gray;
@@ -35,6 +45,7 @@ export default {
 
 h1 {
   font-family: Cookie;
+  margin: 1vh 0 0 0;
 }
 
 * {
