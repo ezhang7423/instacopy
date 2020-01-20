@@ -1,22 +1,18 @@
 <template>
-  <div id="app">
-    <h1>instacopy</h1>
-    <home></home>
+  <div>
+    <navbar></navbar>
   </div>
 </template>
 
 <script>
-import home from "@/components/home.vue";
-
+import navbar from "@/components/navbar.vue";
 export default {
-  name: "app",
-  components: {
-    home
-  }
+  name: "home",
+  components: { navbar }
 };
 </script>
 
-<style>
+<style scoped>
 @font-face {
   font-family: Cookie;
   src: url("../assets/Cookie-Regular.ttf");
