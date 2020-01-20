@@ -1,14 +1,28 @@
 <template>
-  <div class="home">
-    hi
+  <div id="app">
+    <h1>instacopy</h1>
+    <home></home>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
+import home from "@/components/home.vue";
 
 export default {
-  name: "home",
-  components: {}
+  name: "app",
+  components: {
+    home
+  }
 };
 </script>
+
+<style>
+@font-face {
+  font-family: Cookie;
+  src: url("../assets/Cookie-Regular.ttf");
+}
+
+* {
+  font-family: Cookie;
+}
+</style>
