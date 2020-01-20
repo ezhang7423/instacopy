@@ -13,7 +13,7 @@
     </div>
     <div class="right">
       <b-button variant="primary" class="login">Log In</b-button>
-      <b-link style="margin: 1vh 0 0 1vw">Sign Up</b-link>
+      <b-link style="color: #3897f0; margin: 1vh 0 0 1vw">Sign Up</b-link>
     </div>
   </div>
 </template>
@@ -75,8 +75,13 @@ export default {
   justify-content: center;
   height: 4vh;
   margin-top: 1vh;
+  background-color: rgba(var(--b3f, 250, 250, 250), 1);
 }
 
+.searche:focus {
+  background-color: white;
+  text-align: left;
+}
 * {
   font-family: Segoe UI;
   font-size: 14px;
