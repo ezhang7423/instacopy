@@ -1,5 +1,8 @@
 <template>
-  <div id="app"><home></home></div>
+  <div id="app">
+    <h1>instacopy</h1>
+    <home></home>
+  </div>
 </template>
 
 <script>
@@ -13,4 +16,13 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+@font-face {
+  font-family: Cookie;
+  src: url(assets/Cookie-Regular.ttf);
+}
+
+* {
+  font-family: Cookie;
+}
+</style>
