@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="./objects.js"></script>
+    <script>
+      /**
+       * Sample JavaScript code for search.cse.list
+       * See instructions for running APIs Explorer code samples locally:
+       * https://developers.google.com/explorer-help/guides/code_samples#javascript
+       */
+
+      function loadClient() {
+        gapi.client.setApiKey("AIzaSyC6Qp17V4R_RoIIdaOKomWAzh69iI9NCRk");
+        return gapi.client
+          .load(
+            "https://content.googleapis.com/discovery/v1/apis/customsearch/v1/rest"
+          )
+          .then(
+            function() {
+              console.log("GAPI client loaded for API");
+            },
+            function(err) {
+              console.error("Error loading GAPI client for API", err);
+            }
+          );
+      }
+      // Make sure the client is loaded before calling this method.
+      function executee(query) {
+        return gapi.client.search.cse
+          .list({
+            q: query,
+            cx: "012916908329772902285:lc2fdgxgwt6",
+            imgSize: "medium",
+            imgType: "photo",
+            num: 1,
+            searchType: "image"
+          })
+          .then(
+            function(response) {
+              // Handle the results here (response.result has the parsed body).
+              var p = document.createElement("p");
+              var node = document.createTextNode(
+                response.result.queries.nextPage[0].searchTerms +
+                  " " +
+                  response.result.items[0].link
+              );
+              p.appendChild(node);
+              var parent = document.querySelector(".con");
+              parent.appendChild(p);
+            },
+            function(err) {
+              console.error("Execute error", err);
+            }
+          );
+      }
+      gapi.load("client");
+      function execute() {
+        for (i = 0; i < obj.length; i++) {
+          executee(obj[i]);
+        }
+      }
+    </script>
+    <button onclick="loadClient()">load</button>
+    <button onclick="execute()">execute</button>
+    <div class="con"></div>
+  </body>
+</html>
