@@ -1,14 +1,16 @@
 <template>
   <div>
     <navbar></navbar>
+    <mprofile></mprofile>
   </div>
 </template>
 
 <script>
 import navbar from "@/components/navbar.vue";
+import mprofile from "@/components/miniprofile.vue";
 export default {
   name: "home",
-  components: { navbar }
+  components: { navbar, mprofile }
 };
 </script>
 
